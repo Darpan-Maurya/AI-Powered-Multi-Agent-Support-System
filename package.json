@@ -1,0 +1,20 @@
+{
+  "name": "ai-powered-multi-agent-support-system",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build"
+  },
+  "devDependencies": {
+    "turbo": "^2.7.5",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "ai": "^6.0.39",
+    "ai-sdk-ollama": "^3.1.1"
+  }
+}
