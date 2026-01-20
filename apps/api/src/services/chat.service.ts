@@ -5,6 +5,7 @@ import {
   OrderAgentAI,
   BillingAgentAI
 } from "@repo/agents";
+import { compactContext } from "./context.util";
 
 /**
  * Core orchestration service for chat
@@ -51,10 +52,10 @@ export async function handleChatMessage(params: {
     orderBy: { createdAt: "asc" }
   });
 
-  const contextText = messages
-    .map(m => `${m.role}: ${m.content}`)
-    .join("\n");
-
+  const rawcontextText = messages.map(
+  m => `${m.role}: ${m.content}`
+  );
+  const contextText = await compactContext(rawcontextText);
   /* -------------------------
      4. Route using AI Router
      ------------------------- */

@@ -5,7 +5,7 @@ export async function sendMessageStream(
   onChunk: (chunk: string) => void,
   onStatus: (status: string) => void
 ) {
-  const res = await fetch("/api/chat/messages", {
+  const res = await fetch("http://localhost:3000/api/chat/messages", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input)
